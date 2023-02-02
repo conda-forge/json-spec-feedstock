@@ -1,5 +1,5 @@
 {% set name = "json-spec" %}
-{% set version = "0.10.1" %}
+{% set version = "0.11.0" %}
 
 
 package:
@@ -7,12 +7,12 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/json-spec-{{ version }}.tar.gz
-  sha256: 0b32fb0508d47115eccb4daa14731f101f1263fb57a8cb13ca49c960b05eb719
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name.replace('-', '_') }}-{{ version }}.tar.gz
+  sha256: c767d6599dee08cd8fa9cce40daad42ef09e469c864acb29a04997de7f8e9d3b
 
 build:
   number: 0
-  noarch:  python
+  noarch: python
   entry_points:
     - json = jsonspec.cli:main
   script: {{ PYTHON }} -m pip install . -vv
